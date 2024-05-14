@@ -20,13 +20,13 @@ export default function App() {
 	const [activities, setActivities] = useState(initialActivities);
 
 	function handleAddActivity(newActivity) {
-		setActivities([{ id: uid(), ...newActivity }, ...initialActivities]);
+		setActivities([{ id: uid(), ...newActivity }, ...activities]);
 	}
 
 	return (
 		<>
 			<h1>Weather App</h1>
-			<ActivityForm key={activities.id} onAddActivity={handleAddActivity} />
+			<ActivityForm onAddActivity={handleAddActivity} />
 		</>
 	);
 }
