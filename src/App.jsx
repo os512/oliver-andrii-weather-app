@@ -1,35 +1,32 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import ActivityForm from "./components/ActivityForm/ActivityForm";
+import { uid } from "uid";
 import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0);
+const initialActivities = [
+	{
+		id: 1,
+		name: "badminton",
+		isForGoodWeather: true,
+	},
+	{
+		id: 2,
+		name: "chess",
+		isForGoodWeather: false,
+	},
+];
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>OLI and ANDRII</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  );
+export default function App() {
+	const [activities, setActivities] = useState(initialActivities);
+
+	function handleAddActivity(newActivity) {
+		setActivities([{ id: uid(), ...newActivity }, ...initialActivities]);
+	}
+
+	return (
+		<>
+			<h1>Weather App</h1>
+			<ActivityForm key={activities.id} onAddActivity={handleAddActivity} />
+		</>
+	);
 }
-
-export default App;
