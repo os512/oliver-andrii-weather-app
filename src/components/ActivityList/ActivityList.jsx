@@ -1,9 +1,13 @@
-export function ActivityList({ activities, weather }) {
+export function ActivityList({ activities, weather, condition, temperature }) {
   const filteredActivities = activities.filter(
     (activity) => activity.isForGoodWeather === weather
   );
   return (
     <>
+      <section className="weather__icons__section">
+        <div className="weather__icon__condition">{condition}</div>
+        <div className="weather__icon__temperature">{temperature}</div>
+      </section>
       <h2>{setHeader({ weather })}</h2>
       <ul className="activity__list">
         {filteredActivities.map((activity) => (

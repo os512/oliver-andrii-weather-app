@@ -16,3 +16,9 @@
   border: 1px solid rgb(137, 136, 132);
   border-radius: 9px;
 }
+
+.weather__icons__section {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+}

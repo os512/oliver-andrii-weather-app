@@ -33,7 +33,7 @@ export default function App() {
     <>
       <h1>Weather App</h1>
       <ActivityForm onAddActivity={handleAddActivity} />
-      <ActivityList activities={activities} weather={isGoodWeather} />
+      <ActivityList activities={activities} weather={isGoodWeather} condition={condition} temperature={temperature}/>
     </>
   );
 }
