@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ActivityForm from "./components/ActivityForm/ActivityForm";
-import { ActivityList } from "./components/ActivityForm/ActivityList";
+import { ActivityList } from "./components/ActivityList/ActivityList";
 import { uid } from "uid";
 import "./App.css";
 
