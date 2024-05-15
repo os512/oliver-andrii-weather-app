@@ -1,4 +1,10 @@
-export function ActivityList({ activities, weather, condition, temperature }) {
+export function ActivityList({
+  activities,
+  weather,
+  condition,
+  temperature,
+  onDeleteActivity
+}) {
   const filteredActivities = activities.filter(
     (activity) => activity.isForGoodWeather === weather
   );
@@ -10,14 +16,21 @@ export function ActivityList({ activities, weather, condition, temperature }) {
       </section>
       <h2>{setHeader({ weather })}</h2>
       <ul className="activity__list">
-        {filteredActivities.map((activity) => (
+        {filteredActivities.map(( activity ) => (
           <li
             key={activity.id}
             className="activity activity__${id}"
             id="isForGoodWeather__checkbox"
           >
             <h3 className="activity__title">{activity.name}</h3>
-            <button className="activity__button__delete">x</button>
+            <button
+              className="activity__button__delete"
+              onClick={() => {
+                onDeleteActivity(activity.id);
+              }}
+            >
+              x
+            </button>
           </li>
         ))}
       </ul>
