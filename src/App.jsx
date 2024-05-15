@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ActivityForm from "./components/ActivityForm/ActivityForm";
+import { ActivityList } from "./components/ActivityForm/ActivityList";
 import { uid } from "uid";
 import "./App.css";
 
@@ -26,6 +27,7 @@ export default function App() {
   return (
     <>
       <h1>Weather App</h1>
+      <ActivityList activities={activities} />
       <ActivityForm onAddActivity={handleAddActivity} />
     </>
   );
