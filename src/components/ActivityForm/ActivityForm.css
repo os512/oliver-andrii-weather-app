@@ -1,0 +1,43 @@
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+label {
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.input__name__section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 70%;
+}
+
+.input__field {
+  width: 100%;
+  padding: 5px 0;
+  border-radius: 5px;
+}
+
+.input__weather__section {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.input__checkbox {
+  width: 21px;
+  height: 21px;
+}
+
+.form__submit__button {
+  font-size: 16px;
+  width: 30%;
+  border-radius: 5px;
+}
