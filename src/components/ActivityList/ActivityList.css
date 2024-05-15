@@ -10,6 +10,7 @@
 .activity {
   display: flex;
   justify-content: space-between;
+  padding: 5px;
   background-color: grey;
   list-style: none;
   border: 1px solid rgb(137, 136, 132);
