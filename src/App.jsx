@@ -23,6 +23,8 @@ export default function App() {
     defaultValue: initialActivities,
   });
 
+  const [isGoodWeather, setIsGoodWeather] = useState(false);
+
   function handleAddActivity(newActivity) {
     setActivities([{ id: uid(), ...newActivity }, ...activities]);
   }
@@ -31,7 +33,7 @@ export default function App() {
     <>
       <h1>Weather App</h1>
       <ActivityForm onAddActivity={handleAddActivity} />
-      <ActivityList activities={activities} />
+      <ActivityList activities={activities} weather={isGoodWeather} />
     </>
   );
 }

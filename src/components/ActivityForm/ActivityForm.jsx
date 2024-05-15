@@ -8,7 +8,7 @@ export default function ActivityForm({ onAddActivity }) {
       isForGoodWeather: document.getElementById("isForGoodWeather__checkbox")
         .checked,
     };
-    console.log(formElements);
+    console.log(formDataObj.isForGoodWeather);
     onAddActivity(formDataObj);
 
     event.target.reset();
