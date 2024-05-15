@@ -49,7 +49,6 @@ export default function App() {
 	useEffect(() => {
 		const intervalId = setInterval(fetchWeather, 5000);
 
-		console.log("hello");
 		return () => clearInterval(intervalId);
 	}, []);
 
