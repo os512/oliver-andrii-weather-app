@@ -2,6 +2,7 @@ import { useState } from "react";
 import ActivityForm from "./components/ActivityForm/ActivityForm";
 import { ActivityList } from "./components/ActivityList/ActivityList";
 import { uid } from "uid";
+import useLocalStorageState from "use-local-storage-state";
 import "./App.css";
 
 const initialActivities = [
@@ -18,7 +19,9 @@ const initialActivities = [
 ];
 
 export default function App() {
-  const [activities, setActivities] = useState(initialActivities);
+  const [activities, setActivities] = useLocalStorageState("activities", {
+    defaultValue: initialActivities,
+  });
 
   function handleAddActivity(newActivity) {
     setActivities([{ id: uid(), ...newActivity }, ...activities]);
@@ -27,8 +30,8 @@ export default function App() {
   return (
     <>
       <h1>Weather App</h1>
-      <ActivityList activities={activities} />
       <ActivityForm onAddActivity={handleAddActivity} />
+      <ActivityList activities={activities} />
     </>
   );
 }
