@@ -19,24 +19,30 @@ export default function ActivityForm({ onAddActivity }) {
     <>
       <h2>Add new Activity:</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="activity__name">Name:</label>
-        <input
-          name="activity__name"
-          id="activity__name"
-          type="text"
-          autoFocus
-        ></input>
-
-        <label htmlFor="isForGoodWeather__checkbox">
-          Good-weather activity:
-        </label>
-        <input
-          name="isForGoodWeather__checkbox"
-          id="isForGoodWeather__checkbox"
-          type="checkbox"
-        />
-
-        <button type="submit">Submit</button>
+        <div className="input__name__section">
+          <label htmlFor="activity__name">Name:</label>
+          <input
+            className="input__field"
+            name="activity__name"
+            id="activity__name"
+            type="text"
+            autoFocus
+          ></input>
+        </div>
+        <div className="input__weather__section">
+          <label htmlFor="isForGoodWeather__checkbox">
+            Good-weather activity:
+          </label>
+          <input
+            className="input__checkbox"
+            name="isForGoodWeather__checkbox"
+            id="isForGoodWeather__checkbox"
+            type="checkbox"
+          />
+        </div>
+        <button className="form__submit__button" type="submit">
+          Submit
+        </button>
       </form>
     </>
   );

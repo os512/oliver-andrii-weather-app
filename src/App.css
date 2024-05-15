@@ -1,4 +1,5 @@
 @import url(./components/ActivityList/ActivityList.css);
+@import url(./components/ActivityForm/ActivityForm.css);
 
 #root {
   max-width: 1280px;

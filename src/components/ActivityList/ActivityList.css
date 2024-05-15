@@ -10,6 +10,7 @@
 .activity {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5px;
   background-color: grey;
   list-style: none;
@@ -18,7 +19,25 @@
 }
 
 .weather__icons__section {
-    display: flex;
-    justify-content: space-around;
-    margin: 15px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 30px 0;
+  border: 1px solid rgb(137, 136, 132);
+  border-radius: 9px;
+  padding: 10px;
+}
+
+.weather__icon__condition {
+  font-size: 45px;
+}
+
+.weather__icon__temperature {
+  font-size: 32px;
+}
+
+.activity__button__delete {
+  width: 45px;
+  padding: 10px;
+  font-size: 21px;
 }
