@@ -1,0 +1,24 @@
+.activity__list {
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+  border: 1px solid rgb(137, 136, 132);
+  border-radius: 9px;
+  padding: 10px;
+}
+
+.activity {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: grey;
+  list-style: none;
+  border: 1px solid rgb(137, 136, 132);
+  border-radius: 9px;
+}
+
+.weather__icons__section {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+}
