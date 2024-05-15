@@ -3,7 +3,7 @@ export function ActivityList({
   weather,
   condition,
   temperature,
-  onDeleteActivity
+  onDeleteActivity,
 }) {
   const filteredActivities = activities.filter(
     (activity) => activity.isForGoodWeather === weather
@@ -12,11 +12,11 @@ export function ActivityList({
     <>
       <section className="weather__icons__section">
         <div className="weather__icon__condition">{condition}</div>
-        <div className="weather__icon__temperature">{temperature}</div>
+        <div className="weather__icon__temperature">{temperature}&deg;C</div>
       </section>
       <h2>{setHeader({ weather })}</h2>
       <ul className="activity__list">
-        {filteredActivities.map(( activity ) => (
+        {filteredActivities.map((activity) => (
           <li
             key={activity.id}
             className="activity activity__${id}"
