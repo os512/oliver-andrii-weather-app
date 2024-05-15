@@ -10,6 +10,7 @@
 .activity {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5px;
   background-color: grey;
   list-style: none;
@@ -33,4 +34,10 @@
 
 .weather__icon__temperature {
   font-size: 32px;
+}
+
+.activity__button__delete {
+  width: 45px;
+  padding: 10px;
+  font-size: 21px;
 }
