@@ -22,7 +22,9 @@ export default function ActivityForm({ onAddActivity, categories }) {
       <h2>Add new Activity</h2>
       <form onSubmit={handleSubmit}>
         <div className="input__name__section">
-          <label htmlFor="activity__name">Name:</label>
+          <label htmlFor="activity__name" className="form__label">
+            Enter a new activity:
+          </label>
           <input
             className="input__field"
             name="activity__name"
@@ -33,7 +35,9 @@ export default function ActivityForm({ onAddActivity, categories }) {
           ></input>
         </div>
         <div className="input__category__section">
-          <label htmlFor="activity__category">Category:</label>
+          <label htmlFor="activity__category" className="category__label">
+            Category:
+          </label>
           <input
             type="text"
             list="category-options"
