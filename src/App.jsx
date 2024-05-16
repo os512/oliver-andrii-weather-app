@@ -18,6 +18,54 @@ const initialActivities = [
     isForGoodWeather: false,
     category: "Games",
   },
+  {
+    id: 3,
+    name: "hiking",
+    isForGoodWeather: true,
+    category: "Outdoors",
+  },
+  {
+    id: 4,
+    name: "picnic",
+    isForGoodWeather: true,
+    category: "Outdoors",
+  },
+  {
+    id: 5,
+    name: "board games",
+    isForGoodWeather: false,
+    category: "Indoors",
+  },
+  {
+    id: 6,
+    name: "movie marathon",
+    isForGoodWeather: false,
+    category: "Indoors",
+  },
+  {
+    id: 7,
+    name: "soccer",
+    isForGoodWeather: true,
+    category: "Sports",
+  },
+  {
+    id: 8,
+    name: "swimming",
+    isForGoodWeather: true,
+    category: "Sports",
+  },
+  {
+    id: 9,
+    name: "video games",
+    isForGoodWeather: false,
+    category: "Games",
+  },
+  {
+    id: 10,
+    name: "card games",
+    isForGoodWeather: false,
+    category: "Games",
+  },
 ];
 
 export default function App() {
@@ -28,6 +76,7 @@ export default function App() {
     defaultValue: ["Sports", "Games", "Outdoor", "Indoor"],
   });
   const [isGoodWeather, setIsGoodWeather] = useState(true);
+  const [isLoading, setIsLoading] = useState(true); // ADDING EXTRA
   const [condition, setCondition] = useState("");
   const [temperature, setTemperature] = useState("");
 
@@ -45,14 +94,19 @@ export default function App() {
 
   async function fetchWeather() {
     try {
-      const response = await fetch("https://example-apis.vercel.app/api/weather");
+      const response = await fetch(
+        "https://example-apis-qays8irhv-neuefische.vercel.app/api/weather"
+      );
       if (!response.ok)
-        throw new Error(`Failed to fetch weather data, status code: ${response.status}`);
+        throw new Error(
+          `Failed to fetch weather data, status code: ${response.status}`
+        );
       const weather = await response.json();
 
       setIsGoodWeather(weather?.isGoodWeather);
       setCondition(weather?.condition);
       setTemperature(weather?.temperature);
+      setIsLoading(false);
     } catch (error) {
       console.error("Fetch error:", error);
     }
@@ -75,6 +129,7 @@ export default function App() {
         temperature={temperature}
         onDeleteActivity={handleDeleteActivity}
         categories={categories}
+        isLoading={isLoading}
       />
     </>
   );
