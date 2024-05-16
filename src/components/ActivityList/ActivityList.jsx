@@ -1,12 +1,19 @@
+import { useState } from "react";
+
 export function ActivityList({
   activities,
   weather,
   condition,
   temperature,
   onDeleteActivity,
+  categories,
 }) {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   const filteredActivities = activities.filter(
-    (activity) => activity.isForGoodWeather === weather
+    (activity) =>
+      activity.isForGoodWeather === weather &&
+      (selectedCategory === "All" || activity.category === selectedCategory)
   );
   return (
     <>
@@ -14,15 +21,23 @@ export function ActivityList({
         <div className="weather__icon__condition">{condition}</div>
         <div className="weather__icon__temperature">{temperature}&deg;C</div>
       </section>
+
+      <select onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory}>
+        <option value="All">All</option>
+        {categories.map((category) => (
+          <option key={category} value={category}>
+            {category}
+          </option>
+        ))}
+      </select>
+
       <h2>{setHeader({ weather })}</h2>
       <ul className="activity__list">
         {filteredActivities.map((activity) => (
-          <li
-            key={activity.id}
-            className="activity"
-            id="isForGoodWeather__checkbox"
-          >
-            <h3 className="activity__title">{activity.name}</h3>
+          <li key={activity.id} className="activity" id="isForGoodWeather__checkbox">
+            <h3 className="activity__title">
+              {activity.name} | {`Category: ${activity.category}`}
+            </h3>
             <button
               className="activity__button__delete"
               onClick={() => {
