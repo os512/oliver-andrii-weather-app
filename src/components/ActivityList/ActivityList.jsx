@@ -7,6 +7,7 @@ export function ActivityList({
   temperature,
   onDeleteActivity,
   categories,
+  isLoading,
 }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -17,12 +18,20 @@ export function ActivityList({
   );
   return (
     <>
-      <section className="weather__icons__section">
-        <div className="weather__icon__condition">{condition}</div>
-        <div className="weather__icon__temperature">{temperature}&deg;C</div>
-      </section>
-
-      <select onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory}>
+      {isLoading ? (
+        <section className="weather__icons__section">
+          <h4>Wait a second, we are checking the weather...</h4>
+        </section>
+      ) : (
+        <section className="weather__icons__section">
+          <div className="weather__icon__condition">{condition}</div>
+          <div className="weather__icon__temperature">{temperature}&deg;C</div>
+        </section>
+      )}
+      <select
+        onChange={(e) => setSelectedCategory(e.target.value)}
+        value={selectedCategory}
+      >
         <option value="All">All</option>
         {categories.map((category) => (
           <option key={category} value={category}>
@@ -30,11 +39,14 @@ export function ActivityList({
           </option>
         ))}
       </select>
-
       <h2>{setHeader({ weather })}</h2>
       <ul className="activity__list">
         {filteredActivities.map((activity) => (
-          <li key={activity.id} className="activity" id="isForGoodWeather__checkbox">
+          <li
+            key={activity.id}
+            className="activity"
+            id="isForGoodWeather__checkbox"
+          >
             <h3 className="activity__title">
               {activity.name} | {`Category: ${activity.category}`}
             </h3>
