@@ -11,8 +11,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
-  background-color: rgb(231, 230, 230);
+  padding: 5px 15px 5px 15px;
+  /* background-color: rgb(231, 230, 230); */
   list-style: none;
   border: 1px solid rgb(137, 136, 132);
   border-radius: 9px;
@@ -28,6 +28,19 @@
   padding: 10px;
 }
 
+.loading__weather {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+  border: 1px solid rgb(137, 136, 132);
+  border-radius: 9px;
+  padding: 10px;
+}
+
+.loader {
+  margin-bottom: -25px;
+}
+
 .weather__icon__condition {
   font-size: 45px;
 }
@@ -41,3 +54,32 @@
   padding: 10px;
   font-size: 21px;
 }
+
+.list__category__font {
+  font-family: Kalam, cursive;
+  font-weight: 300;
+  font-style: normal;
+  background-color: rgb(228, 237, 237);
+  color: black;
+  margin-left: 10px;
+  padding: 2px 15px;
+  border-radius: 15px;
+}
+
+/* .kalam-light {
+  font-family: "Kalam", cursive;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.kalam-regular {
+  font-family: "Kalam", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kalam-bold {
+  font-family: "Kalam", cursive;
+  font-weight: 700;
+  font-style: normal;
+} */
