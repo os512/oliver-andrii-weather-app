@@ -21,6 +21,17 @@ export default function ActivityForm({ onAddActivity, categories }) {
     <>
       <h2>Add new Activity</h2>
       <form onSubmit={handleSubmit}>
+        <div className="input__name__section">
+          <label htmlFor="activity__name">Name:</label>
+          <input
+            className="input__field"
+            name="activity__name"
+            id="activity__name"
+            type="text"
+            placeholder="Enter a new activity"
+            required
+          ></input>
+        </div>
         <div className="input__category__section">
           <label htmlFor="activity__category">Category:</label>
           <input
@@ -39,17 +50,6 @@ export default function ActivityForm({ onAddActivity, categories }) {
             ))}
           </datalist>
         </div>
-        <div className="input__name__section">
-          <label htmlFor="activity__name">Name:</label>
-          <input
-            className="input__field"
-            name="activity__name"
-            id="activity__name"
-            type="text"
-            placeholder="Enter a new activity"
-            required
-          ></input>
-        </div>
         <div className="input__weather__section">
           <label htmlFor="isForGoodWeather__checkbox">
             Good-weather activity:
@@ -61,6 +61,7 @@ export default function ActivityForm({ onAddActivity, categories }) {
             type="checkbox"
           />
         </div>
+
         <button className="form__submit__button" type="submit">
           Add activity
         </button>
